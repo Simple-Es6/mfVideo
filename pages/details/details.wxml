@@ -1,0 +1,37 @@
+<view class="details">
+	<video id="myVideo"  objectFit="cover" show-center-play-btn="false" autoplay loop    src="{{videoObj.video_path}}"   controls >
+	</video>
+	<view class="videoTip">
+		<view class="title">{{videoObj.name}}</view>
+		<view class="tip">
+    		<view class="month">{{videoObj.time}}</view>
+    		<view class="zan">
+    			<view data-like="{{videoObj.like}}" data-vid="{{videoObj.video_id}}"   class="zanTap"  catchtap="videoZan"></view>
+    			<view class="zanNum">{{videoObj.like_shu}}</view>
+    			<view class="{{videoObj.like==1?'like iconfont icon-xin':'unlike iconfont icon-xin'}}"></view>        			
+    		</view>
+    	</view>
+    	<view class="vContent">{{videoObj.content}}</view>
+	</view>
+	<view class="recom">
+		<view class="recomTitle"><view class="titleCon">相关推荐</view></view>
+		<scroll-view class="recomList" scroll-x style="width: 100%">
+			<block wx:for="{{videoList}}" wx:key="tuijian" wx:for-index="index" wx:for-item="item">
+				<view class="listItem">
+					<view class="bg"></view>
+					<view class="control" catchtap="goDetails" data-inx="{{index}}" data-name="{{item.name}}" data-vid="{{item.video_id}}" data-vclass="{{item.video_class_id}}"></view>
+					<view class="itemTime">{{item.video_time}}</view>
+					<view class="itemTop" style="background-image: url({{item.thum_path}});">
+						<image class="corImg" src="../../image/play.png"></image>
+					</view>
+					<view class="itemName">{{item.name}}</view>					
+				</view>
+			</block>
+		</scroll-view>
+	</view>
+</view>
+<view class="body-view">
+    <loading hidden="{{loadTrue}}" bindchange="loadingChange">
+        加载中...
+    </loading>
+</view>

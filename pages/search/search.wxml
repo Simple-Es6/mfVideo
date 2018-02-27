@@ -1,0 +1,63 @@
+<!--<import src="../../wxParse/wxParse.wxml"/> -->
+<view class="goSearch">
+	<view class="goSearchCon">
+		<!--<view class="catTap" catchtap="goSearch"></view>-->
+		<input confirm-type="search" type="text" catchconfirm="loadSearch" value="{{title}}" placeholder-class="zi" class="catTap" placeholder="搜索"/>
+		<view class="iconfont icon-search"></view>
+		<view class="quxiao" catchtap="goBack">取消</view>
+	</view>		
+</view>
+<view class="container">	
+	<view class="hisCon" wx:if="{{showTrue==1&&hisArr.length>0}}">
+		<view class="hisTitle">搜索记录</view>
+	<block wx:for="{{hisArr}}" wx:key="his" wx:for-index="idx" wx:for-item="hisItem">
+		<view data-val="{{hisItem}}" catchtap="dianSearch"  class="hisItem">{{hisItem}}</view>
+	</block>
+		<view class="clearHis" catchtap="clearHis">清空搜索记录</view>
+	</view>
+	<view class="wuCon" wx:if="{{videoList.length==0&&showTrue==0}}" style="background-image: url(../../image/wu.png);"></view>
+    <block wx:for="{{videoList}}" wx:key="video" wx:for-index="index" wx:for-item="item">
+    <view class="item">
+    	<view class="itemTop">
+    		<view class="videoCor" hidden="{{!item.hidden}}">
+    			<image class="bgImg" mode="scaleToFill" lazy-load="true" src="{{item.gifShow?item.gif_path:item.thum_path}}"></image>
+		        <view class="itemCor">
+		        	<image class="corImg" src="../../image/play.png"></image>
+		        </view>
+		        <view class="time">{{item.video_time}}</view>
+		        <image class="logo" src="../../image/logo.png"></image>
+		        <view class="control" catchtap="playVideo" data-idx="{{index}}" data-ids="{{'myVideo'+index}}"></view>
+	        </view>
+	      	<video poster="{{item.thum_path}}" objectFit="cover" show-center-play-btn="false" loop hidden="{{item.hidden}}" id="{{'myVideo'+index}}"  src="{{item.video_path}}"   controls >
+	        </video>
+        </view>
+        <view class="itemBot">
+        	<view class="title" data-inx="{{index}}"  catchtap="goDetails" >{{item.name}}</view>
+        	<view class="tip">
+        		<view class="month">{{item.time}}</view>
+        		<view class="zan">
+        			<view data-like="{{item.like}}" data-vid="{{item.video_id}}" data-inx="{{index}}"  class="zanTap"  catchtap="videoZan"></view>
+        			<view class="zanNum">{{item.like_shu}}</view>
+        			<view class="{{item.like==1?'like iconfont icon-xin':'unlike iconfont icon-xin'}}"></view>        			
+        		</view>
+        	</view>
+        	<view class="vContent">	
+        		<view  data-inx="{{index}}"  catchtap="goDetails"  class="{{item.close?'con':'con kcon'}}">{{item.content}}</view>
+        		<view class="close">
+        			<view  class="{{item.close?'dong iconfont icon-down':'dong iconfont icon-down kai'}}"></view>
+        			<view class="zi">{{item.close?'展开':'收起'}}</view>
+        		</view>
+        		<view class="tapClose" catchtap="tapClose" data-idx="{{index}}"></view>
+				<!--<view class="wxParse">
+				    <template is="wxParse" data="{{wxParseData:newCon[index]}}"/>
+				</view>-->        		
+        	</view>
+        </view>
+    </view>
+    </block>    
+</view>
+<view class="body-view">
+    <loading hidden="{{loadTrue}}" bindchange="loadingChange">
+        加载中...
+    </loading>
+</view>

@@ -1,0 +1,21 @@
+<view class="column">	
+	<block wx:for="{{columnList}}" wx:key="column" wx:for-index="index" wx:for-item="item">
+	<view class="citem">
+		<view class="control" data-cid="{{item.id}}" catchtap="goList"></view>
+		<view class="citemTop">	
+			<image class="bgImg" mode="scaleToFill" lazy-load="true" src="{{item.thum_path}}"></image>
+			<view class="bg"></view>
+			<view class="videoNum">{{item.video_number}}个视频</view>
+		</view>
+		<view class="citemBot">
+			<view class="title">{{item.name}}</view>
+			<view class="time">{{item.updatetime}} 更新</view>
+		</view>
+	</view>
+	</block>
+</view>
+<view class="body-view">
+    <loading hidden="{{loadTrue}}" bindchange="loadingChange">
+        加载中...
+    </loading>
+</view>

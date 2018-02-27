@@ -1,0 +1,176 @@
+.details{
+	padding:0 0 20rpx 0;
+	width: 100%;
+	height: auto;
+}
+#myVideo{
+	/*position:fixed;
+	top: 0;
+	left: 0;
+	z-index: 9;*/
+	width: 100%;
+	height: 422rpx;
+}
+.details .videoTip{
+	width: 100%;
+	height: auto;
+	padding:0 20rpx;
+}
+.details .videoTip .title{
+	padding-top:20rpx;
+	width: 100%;
+	height: auto;
+	color: #1b1b1b;
+	font-size: 36rpx;
+	line-height:50rpx;
+}
+.details .videoTip .tip{
+	padding: 20rpx 0;
+	display: flex;
+	width: 100%;
+	height:90rpx;	
+}
+.details .videoTip .tip .month{	
+	height:50rpx;
+	line-height:50rpx;	
+	flex-grow:1;
+	align-self:flex-start;
+	color: #909090;
+	font-size: 24rpx;
+}
+.details .videoTip .tip .zan{
+	position: relative;
+	flex-grow:1;
+	align-self:flex-end;
+	height:50rpx;
+	line-height:50rpx;	
+	color: #909090;
+}
+.details .videoTip .tip .zan .zanTap{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	width: 100%;
+	height: 50rpx;
+}
+.details .videoTip .tip .zan .like{
+	color: #ff5b5a;
+}
+.details .videoTip .tip .zan .unlike{	
+	color: #cccccc;
+}
+.details .videoTip .tip .zan .iconfont{
+	float:right;
+	width: auto;
+	height:50rpx;
+	line-height:50rpx;
+	padding-right: 10rpx;
+	font-size:32rpx;	
+}
+.details .videoTip .tip .zan .zanNum{
+	float:right;
+	width: auto;
+	height:50rpx;
+	line-height:50rpx;
+	padding-right: 10rpx;
+	font-size:24rpx;	
+}
+.details .videoTip .vContent{
+	padding-bottom:32rpx;
+	width: 100%;
+	height: auto;
+	line-height:50rpx;
+	font-size:30rpx;
+	color:#666;
+}
+.details .recom{
+	width: 100%;
+	height: auto;
+}
+.details .recom .recomTitle{
+	width: 100%;
+	height:auto;
+	border-top: 1rpx solid #f0f0f0;
+}
+.details .recom .recomTitle .titleCon{
+	padding:40rpx 20rpx;
+	width: 100%;
+	height:auto;
+	line-height: 50rpx;
+	font-size: 30rpx;	
+}
+.details .recom .recomList{
+	box-sizing: border-box;
+	width: 100%;
+	padding-left: 20rpx;
+	height:300rpx !important;
+	white-space: nowrap;
+}
+.details .recom .recomList .listItem{
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	margin-right:20rpx;
+	width: 320rpx;
+	height: 100%;
+}
+.details .recom .recomList .listItem .bg{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	width: 100%;
+	height: 200rpx;	
+	border-radius: 15rpx;
+	background: rgba(0,0,0,0);
+}
+.details .recom .recomList .listItem .control{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 4;
+	width: 100%;
+	height:100%;	
+}
+.details .recom .recomList .listItem .itemTime{
+	position: absolute;
+	top:150rpx;
+	right:10rpx;
+	z-index:3;
+	font-size: 32rpx;
+	color: #fff;	
+}
+/*.details .recom .recomList .listItem:last-of-type{
+	margin-right: 0 !important;
+}*/
+.details .recom .recomList .listItem .itemTop{
+	display: flex;
+	width: 100%;
+	height: 200rpx;
+	align-items: center;
+	justify-content: center;
+	border-radius: 15rpx;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;	
+}
+.details .recom .recomList .listItem .itemTop .corImg{
+	width: 90rpx;
+	height: 90rpx;
+}
+.details .recom .recomList .listItem .itemName{
+	padding-top: 20rpx;
+	width: 100%;
+	height:100rpx;
+	font-size: 30rpx;
+	color: #000;
+	line-height: 40rpx;
+	display: -webkit-box;
+	word-break: break-all !important;
+	white-space: normal !important;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp:2;
+}

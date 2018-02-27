@@ -1,0 +1,55 @@
+<!--<import src="../../wxParse/wxParse.wxml"/> -->
+<view class="container">
+	<!--<view class="goSearch">
+		<view class="goSearchCon">
+			<view class="catTap" catchtap="goSearch"></view>
+			<view class="iconfont icon-search2"></view>
+			<view class="zi">搜索</view>
+		</view>		
+	</view>-->
+    <block wx:for="{{videoList}}" wx:key="video" wx:for-index="index" wx:for-item="item">
+    <view class="item">
+    	<view class="itemTop">
+    		<view class="videoCor" hidden="{{!item.hidden}}">
+    			<image class="bgImg" mode="scaleToFill" lazy-load="true" src="{{item.gifShow?item.gif_path:item.thum_path}}"></image>
+		        <view class="itemCor">
+		        	<image class="corImg" src="../../image/play.png"></image>
+		        </view>
+		        <view class="time">{{item.video_time}}</view>
+		        <image class="logo" src="../../image/logo.png"></image>
+		        <view class="control" catchtap="playVideo" data-idx="{{index}}" data-ids="{{'myVideo'+index}}"></view>
+	        </view>
+	      	<video poster="{{item.thum_path}}" objectFit="cover" show-center-play-btn="false" loop hidden="{{item.hidden}}" id="{{'myVideo'+index}}"  src="{{item.video_path}}"   controls >
+	        </video>
+        </view>
+        <view class="itemBot">
+        	<view class="title" data-inx="{{index}}" data-vid="{{item.video_id}}" data-vclass="{{item.video_class_id}}" data-name="{{item.name}}" catchtap="goDetails">{{item.name}}</view>
+        	<view class="tip">
+        		<view class="month">{{item.time}}</view>
+        		<view class="zan">
+        			<view data-like="{{item.like}}"  data-vid="{{item.video_id}}" data-inx="{{index}}"  class="zanTap"  catchtap="videoZan"></view>
+        			<view class="zanNum">{{item.like_shu}}</view>
+        			<view class="{{item.like==1?'like iconfont icon-xin':'unlike iconfont icon-xin'}}"></view>        			
+        		</view>
+        	</view>
+        	<view class="vContent">	
+        		<view data-vid="{{item.video_id}}" data-inx="{{index}}" data-name="{{item.name}}" catchtap="goDetails" class="{{item.close?'con':'con kcon'}}">{{item.content}}</view>
+        		<view class="close">
+        			<view  class="{{item.close?'dong iconfont icon-down':'dong iconfont icon-down kai'}}"></view>
+        			<view class="zi">{{item.close?'展开':'收起'}}</view>
+        		</view>
+        		<view class="tapClose" catchtap="tapClose" data-idx="{{index}}"></view>
+				<!--<view class="wxParse">
+				    <template is="wxParse" data="{{wxParseData:newCon[index]}}"/>
+				</view>-->        		
+        	</view>
+        </view>
+    </view>
+    </block>
+    
+</view>
+<view class="body-view">
+    <loading hidden="{{loadTrue}}" bindchange="loadingChange">
+        加载中...
+    </loading>
+</view>

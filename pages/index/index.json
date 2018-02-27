@@ -1,0 +1,5 @@
+{
+    "navigationBarTitleText":"摩蜂视频",
+    "onReachBottomDistance":60,
+    "enablePullDownRefresh":true
+}

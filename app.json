@@ -1,0 +1,40 @@
+{
+  "pages":[	
+    "pages/index/index",
+    "pages/column/column",
+    "pages/search/search",
+		"pages/details/details",
+    "pages/list/list",
+    "pages/activity/activity"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "摩蜂视频",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#b2b2b2",
+    "selectedColor": "#212121",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "iconPath": "image/index2.png",
+      "selectedIconPath": "image/index.png",
+      "text": "首页"
+    }, 
+    {
+      "pagePath": "pages/column/column",
+      "iconPath": "image/column2.png",
+      "selectedIconPath": "image/column.png",
+      "text":"栏目"
+    },
+    {
+      "pagePath": "pages/activity/activity",
+      "iconPath": "image/activity2.png",
+      "selectedIconPath": "image/activity.png",
+      "text": "活动"
+    }]
+  }
+}
